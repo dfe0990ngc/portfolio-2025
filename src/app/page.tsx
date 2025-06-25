@@ -18,8 +18,8 @@ export default function Home() {
         const y = useMotionValue(0);
         const rotateX = useTransform(y, [-150, 150], [10, -10]);
         const rotateY = useTransform(x, [-150, 150], [-10, 10]);
-        
-        const handleMouse = (event) => {
+
+        const handleMouse = (event: React.MouseEvent<HTMLDivElement>) => {
             const rect = event.currentTarget.getBoundingClientRect();
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
