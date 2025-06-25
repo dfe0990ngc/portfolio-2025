@@ -13,7 +13,7 @@ import { BsFileExcel } from "react-icons/bs";
 export default function Home() {
 
     // Create independent motion values for each card
-    const createCardMotionValues = () => {
+    const useCardMotionValues = () => {
         const x = useMotionValue(0);
         const y = useMotionValue(0);
         const rotateX = useTransform(y, [-150, 150], [10, -10]);
@@ -36,14 +36,14 @@ export default function Home() {
         return { rotateX, rotateY, handleMouse, handleMouseLeave };
     };
 
-    const card1 = createCardMotionValues();
-    const card2 = createCardMotionValues();
-    const card3 = createCardMotionValues();
-    const card4 = createCardMotionValues();
-    const card5 = createCardMotionValues();
+    const card1 = useCardMotionValues();
+    const card2 = useCardMotionValues();
+    const card3 = useCardMotionValues();
+    const card4 = useCardMotionValues();
+    const card5 = useCardMotionValues();
 
-    const card7 = createCardMotionValues();
-    const card8 = createCardMotionValues();
+    const card7 = useCardMotionValues();
+    const card8 = useCardMotionValues();
 
   return (
     <div className="flex flex-col justify-center items-center mx-auto p-4 max-w-7xl min-h-screen overflow-hidden">
