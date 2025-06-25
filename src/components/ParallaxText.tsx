@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 
 import {
   motion,
@@ -11,10 +12,10 @@ import {
 import { wrap } from "@motionone/utils";
 import { useRef } from "react";
 
-interface ParallaxProps {
-  children: string;
+type ParallaxProps = {
   baseVelocity: number;
-}
+  children: ReactNode;
+};
 
 export default function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   const baseX = useMotionValue(0);
