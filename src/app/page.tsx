@@ -3,11 +3,10 @@
 import Avatar from "../../public/images/avatar.webp";
 import Image from "next/image";
 import SubBGImage from "../../public/images/sub-bg2-image.webp";
-import {inView, motion, useMotionValue, useTransform, animate} from "framer-motion";
-import { MdCode, MdOutlineAnalytics, MdOutlineEmail, MdOutlinePhone, MdOutlinePictureAsPdf } from "react-icons/md";
-import { FaCodiepie, FaCpanel, FaCss3, FaDatabase, FaDiscord, FaFacebook, FaGit, FaGithub, FaGoodreads, FaGoogle, FaHtml5, FaJira, FaJs, FaLaravel, FaLinkedin, FaMicrosoft, FaNodeJs, FaPhp, FaPython, FaReact, FaServer, FaYoutube } from "react-icons/fa";
+import { motion, useMotionValue, useTransform,} from "framer-motion";
+import { MdOutlineAnalytics, MdOutlineEmail, MdOutlinePhone, MdOutlinePictureAsPdf } from "react-icons/md";
+import {  FaCpanel, FaCss3, FaDatabase, FaDiscord, FaFacebook, FaGit, FaGithub, FaGoodreads, FaHtml5, FaJira, FaJs, FaLaravel, FaLinkedin, FaMicrosoft, FaNodeJs, FaPhp, FaPython, FaReact, FaServer, FaYoutube } from "react-icons/fa";
 import ParallaxText from "@/components/ParallaxText";
-import { FaC } from "react-icons/fa6";
 import { BiLogoCPlusPlus } from "react-icons/bi";
 import { BsFileExcel } from "react-icons/bs";
 
@@ -42,22 +41,9 @@ export default function Home() {
     const card3 = createCardMotionValues();
     const card4 = createCardMotionValues();
     const card5 = createCardMotionValues();
-    const card6 = createCardMotionValues();
 
     const card7 = createCardMotionValues();
     const card8 = createCardMotionValues();
-
-    inView("#banner", (element) => {
-      animate(element, { opacity: 1 })
-    });
-
-    inView("#work-experiences", (element) => {
-      animate(element, { opacity: 1 })
-    });
-
-    inView("#education", (element) => {
-      animate(element, { opacity: 1 })
-    });
 
   return (
     <div className="flex flex-col justify-center items-center mx-auto p-4 max-w-7xl min-h-screen overflow-hidden">
