@@ -1097,3 +1097,361 @@ section {
 .d-block { display: block; }
 .d-flex { display: flex; }
 .d-grid { display: grid; }
+
+/* Additional CSS for React Components - Add this to your styles.css */
+
+/* Notification System */
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.notification {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 300px;
+}
+
+.notification:hover {
+  transform: translateX(-5px);
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.notification-content i {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.notification-success {
+  background: var(--success);
+  border-left: 4px solid #059669;
+}
+
+.notification-error {
+  background: var(--error);
+  border-left: 4px solid #dc2626;
+}
+
+.notification-warning {
+  background: var(--warning);
+  border-left: 4px solid #d97706;
+}
+
+.notification-info {
+  background: var(--accent);
+  border-left: 4px solid #2563eb;
+}
+
+/* Enhanced Navigation */
+.nav-link.active {
+  color: var(--accent);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Form Enhancements */
+.form-group.focused label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: var(--card-bg);
+  padding: 0 0.5rem;
+}
+
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: var(--card-bg);
+  padding: 0 0.5rem;
+}
+
+/* Loading States */
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-cta,
+.hero-social {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-title.loading,
+.hero-subtitle.loading,
+.hero-description.loading,
+.hero-cta.loading,
+.hero-social.loading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.loaded .hero-title,
+body.loaded .hero-subtitle,
+body.loaded .hero-description,
+body.loaded .hero-cta,
+body.loaded .hero-social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill-category {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-category.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skill Progress Animation Enhancement */
+.skill-fill {
+  /* width: 0; */
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Cursor (Desktop) */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+
+/* Floating Card Enhancements */
+.floating-card.tech-card:nth-child(4) {
+  top: 30%;
+  left: -5%;
+  animation-delay: 1s;
+}
+
+/* Additional Slide Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Button Loading State */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn .fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced Hover Effects */
+.social-link:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(56, 189, 248, 0.15);
+}
+
+/* Responsive Notification */
+@media (max-width: 768px) {
+  .notification-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .notification {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* Theme Toggle Button (Optional) */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+}
+
+/* Light Theme Variables (for future use) */
+body.light-theme {
+  --primary: #ffffff;
+  --accent: #2563eb;
+  --secondary: #64748b;
+  --text: #1e293b;
+  --highlight: #f59e0b;
+  --code-bg: #f1f5f9;
+  --card-bg: #f8fafc;
+  --border: #e2e8f0;
+}
+
+/* Enhanced Form Focus States */
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Improved Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-menu.active {
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.95);
+  }
+  
+  .nav-link {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background: rgba(56, 189, 248, 0.1);
+    transform: translateX(5px);
+  }
+}
+
+/* Loading Overlay (Optional) */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
