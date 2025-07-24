@@ -1,10 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 
+import Home from './pages/Home';
 function App() {
+  useEffect(() => {
+      const script = document.createElement('script');
+      script.src = '/js/script.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+      document.body.removeChild(script);
+      };
+
+  }, []);
+  
   return (
-    <div className="flex justify-center items-center bg-gray-100 min-h-screen">
-      <p>Nelson Cañete's Portfolio</p>
-    </div>
+    <Home />
   );
 }
 

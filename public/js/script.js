@@ -1,3 +1,4 @@
+(function () {
 // Mobile Navigation
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -369,3 +370,5 @@ const imageObserver = new IntersectionObserver((entries) => {
 images.forEach(img => {
     imageObserver.observe(img);
 });
+
+})();
