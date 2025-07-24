@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { useScroll } from '../hooks/useScroll';
-import MyResume from '../assets/My-New-Resume-2025.pdf';
+import MyResume from '../assets/My-New-Resume-2025-V3.pdf';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
