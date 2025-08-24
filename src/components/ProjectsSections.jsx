@@ -4,6 +4,7 @@ import SaratelSolutionsImg from '../assets/images/saratelsolutions.webp';
 import AnacaImg from '../assets/images/anaca.webp';
 import PCDSImg from '../assets/images/pcds.webp';
 import PortfolioImg from '../assets/images/portfolio.webp';
+import HelCrisHotelImg from '../assets/images/helcris-hotel.webp';
 import { useIntersectionObserver } from '../hooks/useAnimation';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
@@ -99,7 +100,15 @@ const ProjectsSection = () => {
       image: PortfolioImg,
       liveUrl: 'https://nelson-gc-portfolio.vercel.app/',
       githubUrl: 'https://github.com/dfe0990ngc/portfolio-2025',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP']
+      technologies: ['HTML5', 'CSS3', 'JavaScript','React.js']
+    },
+    {
+      title: 'HelCris Hotel',
+      description: 'PCDS - HelCris Hotel is a sample hotel booking web application built with React.js and TailwindCSS, designed to train Polytechnic College of Davao del Sur frontliner students in real-world hospitality operations.',
+      image: HelCrisHotelImg,
+      liveUrl: 'https://helcris-hotel.pcds.edu.ph/',
+      githubUrl: 'https://github.com/dfe0990ngc/helcris-hotel',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React.js','API Integration']
     }
   ];
 
