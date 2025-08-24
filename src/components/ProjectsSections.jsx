@@ -103,12 +103,12 @@ const ProjectsSection = () => {
       technologies: ['HTML5', 'CSS3', 'JavaScript','React.js']
     },
     {
-      title: 'HelCris Hotel',
-      description: 'PCDS - HelCris Hotel is a sample hotel booking web application built with React.js and TailwindCSS, designed to train Polytechnic College of Davao del Sur frontliner students in real-world hospitality operations.',
+      title: 'HILLCREST SUITES',
+      description: 'PCDS - HillCrest Suites is a sample hotel booking web application built with React.js and TailwindCSS, designed to train Polytechnic College of Davao del Sur frontliner students in real-world hospitality operations.',
       image: HelCrisHotelImg,
-      liveUrl: 'https://helcris-hotel.pcds.edu.ph/',
+      liveUrl: 'https://www.hillcrest-suites.pcds.edu.ph/',
       githubUrl: 'https://github.com/dfe0990ngc/helcris-hotel',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'React.js','API Integration']
+      technologies: ['HTML5', 'CSS3','TailwindCSS', 'JavaScript', 'React.js','API Integration']
     }
   ];
 

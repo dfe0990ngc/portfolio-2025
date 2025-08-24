@@ -1,9 +1,10 @@
 // components/ContactSection.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkedAlt } from 'react-icons/fa';
 import { useIntersectionObserver } from '../hooks/useAnimation';
 import { useNotification } from '../hooks/useNotification';
 import Socials from './Socials';
+import { sendEmail as mailSend } from '../api/api';
 
 const FormGroup = ({ type, id, name, label, required = false, rows, disabled = false, value, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -46,6 +47,44 @@ const ContactSection = () => {
   const [subject,setSubject] = useState('');
   const [message,setMessage] = useState('');
 
+  const sendEmail = async (e) => {
+
+    e.preventDefault();
+
+    if(name.trim().length < 2 || email.trim().length < 5 || subject.trim().length < 2 || message.trim().length < 2){
+      showNotification("All input fields are required!", 'warning');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try{
+      const { data } = await mailSend({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      });
+
+      showNotification(data?.message || "Message has been sent successfully!", 'success');
+
+      e.target.reset();
+
+      resetForm();
+    }catch(error){
+      console.log(error);
+      showNotification(error?.response?.data?.message || 'Failed to send your message! Mail Sever is not accessible at the moment.','error');
+    }finally{      
+      setIsSubmitting(false);
+    }
+  }
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  }
+
   const contactInfo = [
     {
       icon: FaEnvelope,
@@ -65,24 +104,6 @@ const ContactSection = () => {
       content: 'Available for remote work worldwide'
     }
   ];
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-        showNotification("Sending of message feaure will be added soon...", 'info');
-        // Reset form fields
-        setName('');
-        setEmail('');
-        setSubject('');
-        setMessage('');
-
-      e.target.reset();
-      setIsSubmitting(false);
-    }, 2000);
-  };
 
   return (
     <section id="contact" className="contact">
@@ -125,12 +146,8 @@ const ContactSection = () => {
             <form 
               className="contact-form" 
               id="contactForm"
-              onSubmit={handleSubmit}
-            >
-              <em className="text-[#ff5555]">
-                This form is not yet usable since the personal domain is offline:
-              </em>
-              
+              onSubmit={sendEmail}
+            >              
               <FormGroup
                 type="text"
                 id="name"
@@ -172,23 +189,34 @@ const ContactSection = () => {
                 onChange={(e) => setMessage(e.target.value)}
               />
               
-              <button 
-                type="submit" 
-                className="flex justify-center w-100 sm:w-60 btn btn-primary" 
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <i className="fas fa-spinner fa-spin"></i>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <i className="fas fa-paper-plane"></i>
-                    Send Message
-                  </>
-                )}
-              </button>
+              <div className="flex justify-between gap-x-6">
+                <button 
+                  type="submit" 
+                  className="flex justify-center w-100 sm:w-60 btn btn-primary" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <i className="fas fa-spinner fa-spin"></i>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <i className="fas fa-paper-plane"></i>
+                      Send Message
+                    </>
+                  )}
+                </button>
+
+                <button 
+                  type="reset" 
+                  onClick={resetForm}
+                  className="flex justify-center w-100 sm:w-60 btn btn-secondary" 
+                  disabled={isSubmitting}
+                >
+                  Reset
+                </button>
+              </div>
             </form>
           </div>
         </div>
