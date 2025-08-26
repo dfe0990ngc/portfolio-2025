@@ -4,7 +4,7 @@ import SaratelSolutionsImg from '../assets/images/saratelsolutions.webp';
 import AnacaImg from '../assets/images/anaca.webp';
 import PCDSImg from '../assets/images/pcds.webp';
 import PortfolioImg from '../assets/images/portfolio.webp';
-import HelCrisHotelImg from '../assets/images/helcris-hotel.webp';
+import HelCrisHotelImg from '../assets/images/hillcrest-suites.webp';
 import { useIntersectionObserver } from '../hooks/useAnimation';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
@@ -107,7 +107,7 @@ const ProjectsSection = () => {
       description: 'PCDS - HillCrest Suites is a sample hotel booking web application built with React.js and TailwindCSS, designed to train Polytechnic College of Davao del Sur frontliner students in real-world hospitality operations.',
       image: HelCrisHotelImg,
       liveUrl: 'https://www.hillcrest-suites.pcds.edu.ph/',
-      githubUrl: 'https://github.com/dfe0990ngc/helcris-hotel',
+      githubUrl: 'https://github.com/dfe0990ngc/hillcrest-suites',
       technologies: ['HTML5', 'CSS3','TailwindCSS', 'JavaScript', 'React.js','API Integration']
     }
   ];
