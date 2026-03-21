@@ -34,6 +34,17 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
+      position: 'IT Staff / Full Stack Developer',
+      company: "LGU Santa Cruz, Vice Mayor's Office",
+      period: 'Sep 2025 - Present',
+      description: "Work as the IT staff of the Vice Mayor's Office, where I develop internal web applications such as SMART-SB and FAST-SB, provide day-to-day technical support to staff, and contribute to digitalization initiatives that improve office operations.",
+      achievements: [
+        'Built and enhanced SMART-SB and FAST-SB to streamline legislative document access, franchise application tracking, and records management.',
+        'Delivered technical support for staff by resolving printer, computer, and general IT issues to maintain smooth office operations.',
+        'Helped plan and promote digital transformation initiatives for the Vice Mayor’s Office to improve efficiency, accessibility, and transparency.'
+      ]
+    },
+    {
       position: 'Full Stack Developer',
       company: 'Blockchain Management Corporation Pty Ltd',
       period: 'Mar 2024 - Apr 2025',
