@@ -116,15 +116,15 @@ const ProjectsSection = () => {
       title: 'SMART-SB',
       description: 'SMART-SB, or Streamlined, Modernized, and Accessible Records for Transparency – Sangguniang Bayan, is a web-based application designed for the Sangguniang Bayan of Santa Cruz, Davao del Sur and its constituents to improve the accessibility, efficiency, and transparency of legislative document retrieval.',
       image: SmartSbImg,
-      liveUrl: '#',
-      githubUrl: 'https://github.com/dfe0990ngc/smart-sb-frontend',
+      liveUrl: 'https://stacruz-sis.site/smart-sb',
+      githubUrl: 'https://github.com/dfe0990ngc/smart-sb',
       technologies: ['React.js', 'TailwindCSS', 'Custom PHP', 'Laravel-like Architecture', 'MySQL', 'REST API','PDF Reports']
     },
     {
       title: 'FAST-SB',
       description: 'FAST-SB, or Franchise Application and System Tracking – Sangguniang Bayan, is a digital system developed to streamline the processing, monitoring, and management of franchise applications and related records within the Sangguniang Bayan of Santa Cruz, Davao del Sur.',
       image: FastSbImg,
-      liveUrl: '#',
+      liveUrl: 'https://stacruz-sis.site/fast-sb',
       githubUrl: 'https://github.com/dfe0990ngc/fast-sb',
       technologies: ['React.js', 'TailwindCSS', 'Custom PHP', 'Laravel-like Architecture', 'MySQL', 'REST API', 'PDF Reports']
     },
